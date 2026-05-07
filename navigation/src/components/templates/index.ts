@@ -1,1 +1,1 @@
-export {default as AuthTemplate} from ' '
+export {default as AuthTemplate} from './AuthTemplate/AuthTemplate'

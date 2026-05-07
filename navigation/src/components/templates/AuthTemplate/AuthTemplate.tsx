@@ -8,8 +8,7 @@ interface AuthTemplateProps {
     children: React.ReactNode;
 }
 
-const AuthTemplate = ({
-    title, subtitle, children}: AuthTemplateProps) => {
+const AuthTemplate = ({title, subtitle, children}: AuthTemplateProps) => {
         return (
             <View>
                 <Text>{title}</Text>
