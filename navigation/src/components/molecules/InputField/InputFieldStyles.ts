@@ -1,14 +1,15 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-  inputContainer: {
-    marginBottom: 22,
+  container: {
+    marginBottom: 18,
   },
 
   label: {
     fontWeight: "700",
     marginBottom: 7,
     color: "#000",
+    fontSize: 13,
   },
 
   input: {
@@ -19,13 +20,5 @@ export default StyleSheet.create({
     paddingHorizontal: 14,
     fontSize: 15,
     backgroundColor: "#fff",
-  },
-
-  registerText: {
-    marginTop: 24,
-    textAlign: "center",
-    color: "#ef7f00",
-    fontWeight: "700",
-    fontSize: 15,
   },
 });

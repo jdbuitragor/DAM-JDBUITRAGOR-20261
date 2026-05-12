@@ -6,16 +6,26 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "../../Routes";
 
 const LoginPage = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<AuthStackParamList>>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<AuthStackParamList>>();
 
-  const handleAction = () => {
-    console.log("Tap en iniciar sesion");
+  const handleLogin = () => {
+    console.log("Login");
+  };
+
+  const goToRegister = () => {
     navigation.navigate("Register");
   };
 
   return (
-    <AuthTemplate title="Login" subtitle="iniciar sesion">
-      <LoginForm onSubmit={handleAction} />
+    <AuthTemplate
+      title="LOGIN"
+      subtitle=""
+    >
+      <LoginForm
+        onSubmit={handleLogin}
+        onRegister={goToRegister}
+      />
     </AuthTemplate>
   );
 };

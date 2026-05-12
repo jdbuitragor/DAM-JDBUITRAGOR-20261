@@ -1,18 +1,59 @@
 import React from "react";
-import { View, Text } from "react-native";
+
+import { View } from "react-native";
+
 import { Button } from "../../atoms";
+import { InputField } from "../../molecules";
 
 interface RegisterFormProps {
-    onSubmit: () => void;
+  onSubmit: () => void;
 }
 
-const RegisterForm = ({onSubmit}: RegisterFormProps) => {
-    return (
-        <View>
-            <Text>Formulario Registro</Text>
-            <Button title="Registrarme" onSubmit={onSubmit}></Button>
-        </View>
-    )
-}
+const RegisterForm = ({
+  onSubmit,
+}: RegisterFormProps) => {
+  return (
+    <View>
+
+      <InputField
+        label="FULL NAME"
+        placeholder="John Doe"
+      />
+
+      <InputField
+        label="USERNAME"
+        placeholder="johndoe123"
+      />
+
+      <InputField
+        label="EMAIL ADDRESS"
+        placeholder="johndoe@example.com"
+      />
+
+      <InputField
+        label="DATE OF BIRTH"
+        placeholder="YYYY-MM-DD"
+      />
+
+      <InputField
+        label="PASSWORD"
+        placeholder="Minimum 8 chars"
+        secureTextEntry
+      />
+
+      <InputField
+        label="CONFIRM PASSWORD"
+        placeholder="Re-enter password"
+        secureTextEntry
+      />
+
+      <Button
+        title="CREATE ACCOUNT"
+        onSubmit={onSubmit}
+      />
+
+    </View>
+  );
+};
 
 export default RegisterForm;

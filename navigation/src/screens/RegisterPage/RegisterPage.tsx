@@ -5,25 +5,26 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "../../Routes";
 
-
 const RegisterPage = () => {
-    const navigation = useNavigation<NativeStackNavigationProp<AuthStackParamList>>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<AuthStackParamList>>();
 
+  const handleRegister = () => {
+    console.log("Register");
+  };
 
-    const handleRegister = () => {
-    console.log("Tap en registro");
+  const goToLogin = () => {
     navigation.navigate("Login");
-    }
+  };
 
-
-
-    return (
-        <AuthTemplate
-            title ="Register"
-            subtitle="Create a new account">
-            <RegisterForm onSubmit={handleRegister}/>
-        </AuthTemplate>
-    )
-}
+  return (
+    <AuthTemplate
+      title="REGISTER"
+      subtitle="Create a new account"
+    >
+      <RegisterForm onSubmit={handleRegister} />
+    </AuthTemplate>
+  );
+};
 
 export default RegisterPage;

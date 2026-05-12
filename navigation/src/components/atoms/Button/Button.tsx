@@ -1,18 +1,25 @@
-import React from "react";
-import { Pressable, Text } from "react-native";
+import React from 'react';
+import {
+  Pressable,
+  Text,
+  GestureResponderEvent,
+} from 'react-native';
 
+import styles from './ButtonStyle';
 
 interface ButtonProps {
-    title: String;
-    onSubmit: () => void;
+  title: string;
+  onSubmit: (event: GestureResponderEvent) => void;
 }
 
-const Button = ({title, onSubmit}: ButtonProps) => {
-        return(
-            <Pressable onPress={onSubmit}>
-                <Text>{title}</Text>
-            </Pressable>
-        );
+const Button = ({ title, onSubmit }: ButtonProps) => {
+  return (
+    <Pressable style={styles.button} onPress={onSubmit}>
+      <Text style={styles.buttonText}>
+        {title}
+      </Text>
+    </Pressable>
+  );
 };
 
 export default Button;

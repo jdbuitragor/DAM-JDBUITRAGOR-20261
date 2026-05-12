@@ -1,23 +1,44 @@
 import React from "react";
-import { View } from "react-native"
-import { Text } from "react-native-gesture-handler";
+
+import {
+  SafeAreaView,
+  View,
+  Text,
+} from "react-native";
+
+import styles from "./AuthTemplateStyles";
 
 interface AuthTemplateProps {
-    title: String;
-    subtitle: String;
-    children: React.ReactNode;
+  title: string;
+  subtitle?: string;
+  children: React.ReactNode;
 }
 
-const AuthTemplate = ({title, subtitle, children}: AuthTemplateProps) => {
-        return (
-            <View>
-                <Text>{title}</Text>
-                { subtitle && <Text>{subtitle}</Text>}
-                <View>
-                    {children}
-                </View>
-            </View>
-        );
-}
+const AuthTemplate = ({
+  title,
+  subtitle,
+  children,
+}: AuthTemplateProps) => {
+  return (
+    <SafeAreaView style={styles.container}>
+
+      <Text style={styles.title}>
+        {title}
+      </Text>
+
+      {
+        subtitle &&
+        <Text style={styles.subtitle}>
+          {subtitle}
+        </Text>
+      }
+
+      <View style={styles.formContainer}>
+        {children}
+      </View>
+
+    </SafeAreaView>
+  );
+};
 
 export default AuthTemplate;

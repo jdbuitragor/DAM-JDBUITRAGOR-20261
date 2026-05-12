@@ -1,19 +1,52 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { Button } from "../../atoms";
 
+import {
+  View,
+  TouchableOpacity,
+  Text,
+} from "react-native";
+
+import { Button } from "../../atoms";
+import { InputField } from "../../molecules";
+
+import styles from "./LoginFormStyles";
 
 interface LoginFormProps {
-    onSubmit: () => void;
+  onSubmit: () => void;
+  onRegister: () => void;
 }
 
-const LoginForm = ({onSubmit}: LoginFormProps) => {
-    return (
-        <View>
-            <Text>Formulario Login</Text>
-            <Button title="Iniciar sesion" onSubmit={onSubmit}></Button>
-        </View>
-    )
-}
+const LoginForm = ({
+  onSubmit,
+  onRegister,
+}: LoginFormProps) => {
+  return (
+    <View>
+
+      <InputField
+        label="Username"
+        placeholder="johndoe"
+      />
+
+      <InputField
+        label="Password"
+        placeholder="********"
+        secureTextEntry
+      />
+
+      <Button
+        title="LOGIN"
+        onSubmit={onSubmit}
+      />
+
+      <TouchableOpacity onPress={onRegister}>
+        <Text style={styles.registerText}>
+          Don't have an account? SIGN UP
+        </Text>
+      </TouchableOpacity>
+
+    </View>
+  );
+};
 
 export default LoginForm;
