@@ -9,12 +9,13 @@ import styles from './ButtonStyle';
 
 interface ButtonProps {
   title: string;
+  disabled?: boolean;
   onSubmit: (event: GestureResponderEvent) => void;
 }
 
-const Button = ({ title, onSubmit }: ButtonProps) => {
+const Button = ({ title, disabled, onSubmit }: ButtonProps) => {
   return (
-    <Pressable style={styles.button} onPress={onSubmit}>
+    <Pressable  disabled={disabled} style={styles.button} onPress={onSubmit}>
       <Text style={styles.buttonText}>
         {title}
       </Text>

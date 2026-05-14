@@ -7,10 +7,11 @@ import { InputField } from "../../molecules";
 
 interface RegisterFormProps {
   onSubmit: () => void;
+  disabledAction: boolean;
 }
 
 const RegisterForm = ({
-  onSubmit,
+  onSubmit, disabledAction
 }: RegisterFormProps) => {
   return (
     <View>
@@ -48,6 +49,7 @@ const RegisterForm = ({
       />
 
       <Button
+        disabled={false}
         title="CREATE ACCOUNT"
         onSubmit={onSubmit}
       />
